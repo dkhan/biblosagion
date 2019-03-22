@@ -23,16 +23,14 @@ default: &default
 
 development:
   <<: *default
-  database: biblosagion_development
+  database: biblos_dev
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user that initialized the database.
-  #username: biblosagion
-
-  # The password associated with the postgres role (username).
-  #password:
+  username: moses
+  password: aaron
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -57,8 +55,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: biblosagion_test
-
+  database: biblos_test
+  username: moses
+  password: aaron
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
@@ -80,6 +79,6 @@ test:
 #
 production:
   <<: *default
-  database: biblosagion_production
-  username: biblosagion
+  database: biblos_prod
+  username: moses
   password: <%= ENV['BIBLOSAGION_DATABASE_PASSWORD'] %>
