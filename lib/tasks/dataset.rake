@@ -6,6 +6,7 @@ namespace :dataset do
 
   desc "Populate Greek bible from the tsv"
   task words: :environment do
+    WordService.populate
   end
 
 end

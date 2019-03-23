@@ -25,4 +25,10 @@ class StrongService
       skip_lines: 1,
       verbose: true
   end
+
+  def self.normalize_strongs
+    Strong.find_each do |strong|
+      strong.update_attribute(:normalized_greek, WordService.normalize(strong.greek))
+    end
+  end
 end

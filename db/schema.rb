@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_23_022852) do
+ActiveRecord::Schema.define(version: 2019_03_23_044550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2019_03_23_022852) do
     t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "normalized_greek"
     t.index ["discarded_at"], name: "index_strongs_on_discarded_at"
     t.index ["greek"], name: "index_strongs_on_greek"
     t.index ["meaning"], name: "index_strongs_on_meaning"
@@ -69,15 +70,19 @@ ActiveRecord::Schema.define(version: 2019_03_23_022852) do
 
   create_table "words", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "reference"
-    t.integer "book_number"
-    t.string "book"
-    t.integer "chapter"
-    t.integer "verse"
-    t.integer "position"
+    t.uuid "strong_id"
+    t.uuid "book_id"
+    t.uuid "chapter_id"
+    t.uuid "verse_id"
+    t.integer "testament_position"
+    t.integer "book_position"
+    t.integer "chapter_position"
+    t.integer "verse_position"
+    t.string "strong_number"
     t.string "editions"
     t.string "interlinear"
     t.string "formatted_greek"
-    t.string "strong_id"
+    t.string "normalized_greek"
     t.string "morphology"
     t.string "lexical_form"
     t.string "meaning"
@@ -87,10 +92,12 @@ ActiveRecord::Schema.define(version: 2019_03_23_022852) do
     t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["book", "chapter", "verse"], name: "index_words_on_book_and_chapter_and_verse"
+    t.index ["book_id", "chapter_id", "verse_id"], name: "index_words_on_book_id_and_chapter_id_and_verse_id"
     t.index ["discarded_at"], name: "index_words_on_discarded_at"
     t.index ["meaning"], name: "index_words_on_meaning"
     t.index ["strong_id"], name: "index_words_on_strong_id"
+    t.index ["strong_number"], name: "index_words_on_strong_number"
+    t.index ["testament_position"], name: "index_words_on_testament_position"
   end
 
 end

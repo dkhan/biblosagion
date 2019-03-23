@@ -6,10 +6,15 @@ class CreateWords < ActiveRecord::Migration[5.2]
       t.uuid :book_id
       t.uuid :chapter_id
       t.uuid :verse_id
-      t.integer :position
+      t.integer :testament_position, index: true
+      t.integer :book_position
+      t.integer :chapter_position
+      t.integer :verse_position
+      t.string :strong_number, index: true
       t.string :editions
       t.string :interlinear
       t.string :formatted_greek
+      t.string :normalized_greek
       t.string :morphology
       t.string :lexical_form
       t.string :meaning, index: true
