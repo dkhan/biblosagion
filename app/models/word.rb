@@ -2,8 +2,9 @@ class Word < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
 
-  belongs_to :strong
-  belongs_to :book
-  belongs_to :chapter
-  belongs_to :verse
+  has_one :strong
+  # the following should be changed to belongs_to after populating the data
+  has_one :book
+  has_one :chapter
+  has_one :verse
 end
