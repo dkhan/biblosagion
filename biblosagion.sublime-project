@@ -1,0 +1,25 @@
+{
+     "folders":
+     [
+          {
+               "file_exclude_patterns":
+               [
+                    "biblosagion.sublime-workspace",
+                    "*.log",
+                    "*.rdb"
+               ],
+               "folder_exclude_patterns":
+               [
+                    "coverage",
+                    "log",
+                    "tmp"
+               ],
+               "path": "/Users/dkhan/Git/biblosagion"
+          }
+     ],
+     "settings":
+     {
+          "tab_size": 2,
+          "translate_tabs_to_spaces": true
+     }
+}
