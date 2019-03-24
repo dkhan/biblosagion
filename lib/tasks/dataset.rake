@@ -9,4 +9,8 @@ namespace :dataset do
     WordService.populate
   end
 
+  desc "Populate books"
+  task books: :environment do
+    BookService.populate
+  end
 end
