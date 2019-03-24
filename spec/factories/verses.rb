@@ -6,13 +6,11 @@ FactoryBot.define do
 
     trait :with_words do
       transient do
-        number_of_words 10
+        number_of_words { 10 }
       end
 
       after :create do |verse, evaluator|
-        evaluator.number_of_words.times do
-          verse.words << create(:random_word)
-        end
+        create_list(:random_word, evaluator.number_of_words, verse: verse)
       end
     end
   end
