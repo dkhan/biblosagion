@@ -73,7 +73,6 @@ class BookService
     @book = Book.create! number: book_number,
                          name: BOOKS[book_abbreviation][1],
                          abbreviation: book_abbreviation,
-                         number: book_number,
                          reference: "#{book_number}_#{abbreviation}"
   end
 
