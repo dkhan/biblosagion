@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :verse do
-    sequence :number { |n| n }
+    sequence :number
     reference { "#{chapter.reference}.#{number.to_s.rjust(3, "0")}" }
     chapter
 

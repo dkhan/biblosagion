@@ -5,7 +5,7 @@ FactoryBot.define do
 
   factory :word do
     verse
-    sequence :testament_position { |n| n }
+    sequence :testament_position
     reference { verse.reference }
     strong_number { strong.strong_number }
 
