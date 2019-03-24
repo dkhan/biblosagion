@@ -4,25 +4,25 @@ FactoryBot.define do
   end
 
   factory :word do
+    verse
     sequence :testament_position { |n| n }
-    formatted_greek: { "Βίβλος" }
-    lexical_form: { "βίβλος" }
-    normalized_greek: { "βιβλος" }
     reference: { verse.reference }
     strong_number: { strong.strong_number }
 
-    book_position: { nil }
-    verse_position: { nil }
-    chapter_position: { nil }
-    strong
-    book
-    chapter
-    verse
+    association :strong,
+      greek: lexical_form,
+      normalized_greek: WordService.normalize(lexical_form)
+  end
 
-    factory :random_word do
-      normalized_greek: { generate(:abrakadabra) }
-      formatted_greek: { normalized_greek }
-      lexical_form: { normalized_greek }
-    end
+  factory :random_word, parent: :word do
+    normalized_greek: { generate(:abrakadabra) }
+    formatted_greek: { normalized_greek }
+    lexical_form: { normalized_greek }
+  end
+
+  factory :biblos, parent: :word do
+    formatted_greek: { "Βίβλος" }
+    lexical_form: { "βίβλος" }
+    normalized_greek: { "βιβλος" }
   end
 end

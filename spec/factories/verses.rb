@@ -2,7 +2,6 @@ FactoryBot.define do
   factory :verse do
     sequence :number { |n| n }
     reference { "#{chapter.reference}.#{number.to_s.rjust(3, "0")}" }
-    book
     chapter
 
     trait :with_words do
