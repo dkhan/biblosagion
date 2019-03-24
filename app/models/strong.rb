@@ -3,5 +3,5 @@ class Strong < ApplicationRecord
   default_scope -> { kept }
 
   has_many :words, dependent: :nullify
-  has_many :forms, through: :words, uniq: true
+  has_many :forms, -> { unscope(:order).select(:formatted_greek).distinct }, class_name: "Word"
 end

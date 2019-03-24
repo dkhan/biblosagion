@@ -1,6 +1,7 @@
 class Word < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
+  default_scope -> { order(:testament_position) }
 
   belongs_to :strong
   belongs_to :book
