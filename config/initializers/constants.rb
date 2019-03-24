@@ -28,7 +28,7 @@ module Constants
     'ψ' => { place_value: 23, numeric_value: 700, value: 723, vowel: false },
     'ω' => { place_value: 24, numeric_value: 800, value: 824, vowel: true  },
     'ϡ' => { place_value: 25, numeric_value: 900, value: 925, vowel: false }
-  }
+  }.freeze
 
   PANIN_MAP = {
     ' ' => { place_value:  0, numeric_value:   0, value:   0, vowel: false },
@@ -57,5 +57,35 @@ module Constants
     'χ' => { place_value: 22, numeric_value: 600, value: 622, vowel: false },
     'ψ' => { place_value: 23, numeric_value: 700, value: 723, vowel: false },
     'ω' => { place_value: 24, numeric_value: 800, value: 824, vowel: true  }
-  }
+  }.freeze
+
+  BOOKS = {
+    "Mat" => [ "ΚΑΤΑ ΜΑΤΘΑΙΟΝ", "Matthew", "Kata Maththaion", "According to Matthew", "Matthew"],
+    "Mrk" => [ "ΚΑΤΑ ΜΑΡΚΟΝ", "Mark", "Kata Markon", "According to Mark", "Mark"],
+    "Luk" => [ "ΚΑΤΑ ΛΟΥΚΑΝ", "Luke", "Kata Loukan", "According to Luke", "Luke"],
+    "Jhn" => [ "ΚΑΤΑ ΙΩΑΝΝΗΝ", "John", "Kata Ioannen", "According to John", "John"],
+    "Act" => [ "ΠΡΑΞΕΙΣ ΤΩΝ ΑΠΟΣΤΟΛΩΝ", "Acts", "Praxeis Apostolon", "Acts or Deeds of Apostles", "Luke"],
+    "Rom" => [ "ΠΡΟΣ ΡΩΜΑΙΟΥΣ", "Romans", "Pros Romaious", "To the Romans", "Paul"],
+    "1Co" => [ "ΠΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Α", "1 Corinthians", "Pros Korinthious a", "First (letter) to the Corinthians", "Paul"],
+    "2Co" => [ "ΠΡΟΣ ΚΟΡΙΝΘΙΟΥΣ Β", "2 Corinthians", "Pros Korinthious b", "Second (letter) to the Corinthians", "Paul"],
+    "Gal" => [ "ΠΡΟΣ ΓΑΛΑΤΑΣ", "Galatians", "Pros Galatas", "To the Galatians", "Paul"],
+    "Eph" => [ "ΠΡΟΣ ΕΦΕΣΙΟΥΣ", "Ephesians", "Pros Ephesious", "To the Ephesians", "Paul"],
+    "Php" => [ "ΠΡΟΣ ΦΙΛΙΠΠΗΣΙΟΥΣ", "Philippians", "Pros Philippesious", "To the Philippians", "Paul"],
+    "Col" => [ "ΠΡΟΣ ΚΟΛΟΣΣΑΕΙΣ", "Colossians", "Pros Kolossaeis", "To the Colossians", "Paul"],
+    "1Th" => [ "ΠΡΟΣ ΘΕΣΣΑΛΟΝΙΚΕΙΣ Α", "1 Thessalonians", "Pros Thessalonikeis a", "First (letter) to the Thessalonians", "Paul"],
+    "2Th" => [ "ΠΡΟΣ ΘΕΣΣΑΛΟΝΙΚΕΙΣ Β", "2 Thessalonians", "Pros Thessalonikeis b", "Second (letter) to the Thessalonians", "Paul"],
+    "1Ti" => [ "ΠΡΟΣ ΤΙΜΟΘΕΟΝ Α", "1 Timothy", "Pros Timotheon a", "First (letter) to Timothy", "Paul"],
+    "2Ti" => [ "ΠΡΟΣ ΤΙΜΟΘΕΟΝ Β", "2 Timothy", "Pros Timotheon b", "Second (letter) to Timothy", "Paul"],
+    "Tit" => [ "ΠΡΟΣ ΤΙΤΟΝ", "Titus", "Pros Titon", "To Titus", "Paul"],
+    "Phm" => [ "ΠΡΟΣ ΦΙΛΗΜΟΝΑ", "Philemon", "Pros Philemona", "To Philemon", "Paul"],
+    "Heb" => [ "ΠΡΟΣ ΕΒΡΑΙΟΥΣ", "Hebrews", "Pros Hebraious", "To the Hebrews", "UNKNOWN"],
+    "Jas" => [ "ΙΑΚΩΒΟΥ", "James", "lakdbou", "Of James", "James"],
+    "1Pe" => [ "ΠΕΤΡΟΥ Α", "1 Peter", "Petrou a", "First (letter) of Peter", "Peter"],
+    "2Pe" => [ "ΠΕΤΡΟΥ Β", "2 Peter", "Petrou b", "Second (letter) of Peter", "Peter"],
+    "1Jn" => [ "ΙΩΑΝΝΟΥ Α", "1 John", "Ioannou a", "First (letter) of John", "John"],
+    "2Jn" => [ "ΙΩΑΝΝΟΥ Β", "2 John", "Ioannou b", "Second (letter) of John", "John"],
+    "3Jn" => [ "ΙΩΑΝΝΟΥ Γ", "3 John", "Ioannou g", "Third (letter) of John", "John"],
+    "Jud" => [ "ΙΟΥΔΑ", "Jude", "louda", "Jude", "Jude"],
+    "Rev" => [ "ΑΠΟΚΑΛΥΨΙΣ ΙΩΑΝΝΟΥ", "Revelation", "Apokalypsis Ioannou", "Revelation of John", "John"]
+  }.freeze
 end

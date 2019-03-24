@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_23_044550) do
+ActiveRecord::Schema.define(version: 2019_03_24_192616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -25,6 +25,11 @@ ActiveRecord::Schema.define(version: 2019_03_23_044550) do
     t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
+    t.string "greek_title"
+    t.string "transcription"
+    t.string "description"
+    t.string "author"
     t.index ["discarded_at"], name: "index_books_on_discarded_at"
   end
 

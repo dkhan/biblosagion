@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :verse do
     sequence :number
-    reference { "#{chapter.reference}.#{number.to_s.rjust(3, "0")}" }
     chapter
+    reference { "#{chapter.reference}.#{number.to_s.rjust(3, "0")}" }
 
     trait :with_words do
       transient do
