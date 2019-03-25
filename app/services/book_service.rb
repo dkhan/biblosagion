@@ -8,7 +8,7 @@ class BookService
     @book_number = $1.to_i
     @book_abbreviation = $2
     @chapter_number = $3
-    @verse_number = $3
+    @verse_number = $4.to_i
   end
 
   def BookService.populate
@@ -58,7 +58,7 @@ class BookService
 
   def create_verse
     @verse = Verse.create! number: verse_number.to_i,
-                           reference: reference,
+                           reference: word.reference,
                            book: book,
                            chapter: chapter
   end

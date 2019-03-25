@@ -16,4 +16,30 @@ RSpec.describe BookService, "#create_book" do
     expect(book.abbreviation).to eq  "Mat"
     expect(book.reference).to eq "41_Mat"
   end
+
+  it "creates a chapter" do
+    word = build(:random_word, reference: "42_Mrk.016.018")
+
+    service = BookService.new(word)
+    service.create_book
+    service.create_chapter
+
+    chapter = Chapter.find_by_reference("42_Mrk.016")
+    expect(chapter.book.name).to eq "Mark"
+    expect(chapter.number).to eq 16
+  end
+
+  it "creates a verse" do
+    word = build(:random_word, reference: "41_Mat.002.010")
+
+    service = BookService.new(word)
+    service.create_book
+    service.create_chapter
+    service.create_verse
+
+    verse = Verse.find_by_reference("41_Mat.002.010")
+    expect(verse.book.name).to eq "Matthew"
+    expect(verse.chapter.number).to eq 2
+    expect(verse.number).to eq 10
+  end
 end

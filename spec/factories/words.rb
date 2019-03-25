@@ -5,14 +5,12 @@ FactoryBot.define do
 
   factory :word do
     sequence :testament_position
+    book
+    chapter
     verse
+    strong
     reference { verse.reference }
     strong_number { strong.strong_number }
-    #lexical_form { "βίβλος" }
-    strong
-    # association :strong,
-    #   greek: lexical_form,
-    #   normalized_greek: lexical_form
   end
 
   factory :random_word, parent: :word do
