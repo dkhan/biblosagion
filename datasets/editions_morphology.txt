@@ -1,0 +1,80 @@
+Editions
+
+those which use the same letters, though they may be accented or capitalised differently.
+B= Byzantine Textform 2005 (Byz)
+N= NA27 Nestle-Aland Edition 27
+M= NA28 2012 (this is NOT the same as ECM Acts - see eg Act.1.10 ἐσθῆτι in ECM)
+R= Elzevir Textus Receptus (1624) (Elz) OR Textus Receptus (1550/1894) (TR)
+S= Morphologically Parsed Greek New Testament based on the SBLGNT (MorphGNT)
+T= Tregelles' Greek New Testament (TNT)
+W= Grk. NT: W+Hort with NA+UBS variants (WHNU)
+w= [WH] or WHMarg
+H= Tyndale House GNT.
+
+Morphology
+
+N-NSM-P
+CONJ
+V-AAI-3S
+T-ASM
+N-ASM-P
+
+Parts of Speech (CCAT)
+• adjective A-
+• conjunction C-
+• adverb D-
+• interjection I-
+• noun N-
+• preposition P-
+• pronominal
+• article RA
+• demonstrative RD
+• interrogative / indefinite RI
+• personal / possessive RP
+• relative pronoun RR
+• verb V-
+• particle
+Parts of Speech (Friberg)
+• noun N
+• pronoun NP
+• verb V
+• adjective A
+• adverb AB
+• pronominal AP
+• cardinal, demonstrative, indefinite, comparative, ordinal, relative, superlative, interrogative
+• determiner D
+• preposition P
+• conjunction C
+• coordinating, superordinating, subordinating
+• particle Q
+• negative, sentence, interrogative, verbal
+Parts of Speech (Robinson)
+• adverb ADV
+• conjunction CONJ
+• conditional COND
+• particle PRT
+• negative particle PRT-N
+• preposition PREP
+• interjection INJ
+• Aramaic ARAM
+• Hebrew HEB
+• indeclinable proper noun N-PRI
+• indeclinable numeral A-NUI
+• indeclinable letter N-LI
+• indeclinable noun (other) N-OI
+• noun N-
+• adjective A-
+• relative pronoun R-
+• reciprocal pronoun C-
+• demonstrative pronoun D-
+• definite article T-
+• correlative pronoun K-
+• interrogative pronoun I-
+• indefinite pronoun X-
+• correlative or interrogative pronoun
+Q-
+• reflexive pronoun F-
+• possessive pronoun S-
+• personal pronoun P-
+
+
