@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe BookService, "#create_book" do
+RSpec.describe BookService do
   it "creates a book" do
     word = build(:biblos)
 
@@ -41,5 +41,33 @@ RSpec.describe BookService, "#create_book" do
     expect(verse.book.name).to eq "Matthew"
     expect(verse.chapter.number).to eq 2
     expect(verse.number).to eq 10
+  end
+
+  it "populates books, chapters, and verses" do
+    words = []
+    words << build(:random_word, reference: "41_Mat.001.001")
+    words << build(:random_word, reference: "41_Mat.001.002")
+    words << build(:random_word, reference: "41_Mat.002.001")
+    words << build(:random_word, reference: "41_Mat.002.002")
+    words << build(:random_word, reference: "42_Mrk.001.001")
+    words << build(:random_word, reference: "42_Mrk.001.002")
+    words << build(:random_word, reference: "42_Mrk.001.003")
+    words << build(:random_word, reference: "42_Mrk.001.003")
+
+    allow(Word).to receive(:order).and_return(words)
+    #words.each { |word| allow(word).to receive(:save!).and_return(true) }
+    BookService.populate
+
+    matthews = Book.where(name: "Matthew")
+    marks = Book.where(name: "Mark")
+    expect(matthews.count).to eq(1)
+    expect(matthews.first.chapters.count).to eq(2)
+    expect(marks.count).to eq(1)
+    expect(marks.first.chapters.count).to eq(1)
+    expect(marks.first.chapters.first.verses.count).to eq(3)
+    expect(marks.first.chapters.first.verses.last.words.count).to eq(2)
+    expect(words.last.verse).to eq marks.first.chapters.first.verses.last
+    expect(words.last.chapter).to eq marks.first.chapters.last
+    expect(words.last.book).to eq marks.first
   end
 end

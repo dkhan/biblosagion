@@ -7,7 +7,7 @@ class BookService
     @word.reference.match /([\d]{2})_(.*{3})\.([\d]{3})\.([\d]{3})/
     @book_number = $1.to_i
     @book_abbreviation = $2
-    @chapter_number = $3
+    @chapter_number = $3.to_i
     @verse_number = $4.to_i
   end
 
@@ -15,24 +15,22 @@ class BookService
     current_book = nil
     current_chapter = nil
     current_verse = nil
-    current_reference = nil
-    Word.order(:testament_position).find_each do |word|
+    Word.order(:testament_position).each do |word|
+      puts word.reference
       service = new(word)
-
-      unless current_book == service.book
-        service.create_book
-        current_book = service.book
+      service.book = current_book
+      if current_book.try(:number) != service.book_number
+        current_book = service.create_book
       end
 
-      unless current_chapter == service.chapter && current_book == service.book
-        service.create_chapter
-        current_chapter = service.chapter
+      service.chapter = current_chapter
+      if current_chapter.try(:number) != service.chapter_number || current_book.try(:number) != service.book_number
+        current_chapter = service.create_chapter
       end
 
-      unless current_reference == service.reference
-        service.create_verse
-        current_verse = service.verse
-        current_reference = service.reference
+      service.verse = current_verse
+      if current_book.try(:number) != service.book_number || current_chapter.try(:number) != service.chapter_number || current_verse.try(:number) != service.verse_number
+        current_verse = service.create_verse
       end
 
       service.update_word
@@ -51,13 +49,13 @@ class BookService
   end
 
   def create_chapter
-    @chapter = Chapter.create! number: chapter_number.to_i,
+    @chapter = Chapter.create! number: chapter_number,
                                reference: "#{book.reference}.#{chapter_number}",
                                book: book
   end
 
   def create_verse
-    @verse = Verse.create! number: verse_number.to_i,
+    @verse = Verse.create! number: verse_number,
                            reference: word.reference,
                            book: book,
                            chapter: chapter
