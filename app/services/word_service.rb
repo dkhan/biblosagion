@@ -1,21 +1,6 @@
 class WordService
   attr_accessor :word
 
-  SPLIT_WORDS = {
-    "μήγε" => [
-      { editions: 'BRW', interlinear: 'not', formatted_greek: 'μή', strong_number: 'G3361', morphology: 'PRT-N', lexical_form: 'μή', meaning: 'not', sub_meaning: 'not', variants: nil },
-      { editions: 'BIMNRSTH', interlinear: 'surely', formatted_greek: 'γε', strong_number: 'G1065', morphology: 'PRT', lexical_form: 'γέ', meaning: 'indeed', sub_meaning: 'indeed', variants: nil }
-    ],
-    "ἄραγε" => [
-      { editions: 'BIMNRSTWH', interlinear: 'then', formatted_greek: 'ἄρα', strong_number: 'G0686', morphology: 'CONJ', lexical_form: 'ἄρα', meaning: 'therefore', sub_meaning: 'therefore', variants: nil },
-      { editions: 'BIMNRSTH', interlinear: 'surely', formatted_greek: 'γε', strong_number: 'G1065', morphology: 'PRT', lexical_form: 'γέ', meaning: 'indeed', sub_meaning: 'indeed', variants: nil }
-    ],
-    "Ἄραγε" => [
-      { editions: 'BIMNRST', interlinear: 'Then', formatted_greek: 'Ἄρα', strong_number: 'G0686', morphology: 'CONJ', lexical_form: 'ἄρα', meaning: 'therefore', sub_meaning: 'therefore', variants: 'HW=ἄρα=G0686=CONJ;' },
-      { editions: 'BIMNRSTH', interlinear: 'surely', formatted_greek: 'γε', strong_number: 'G1065', morphology: 'PRT', lexical_form: 'γέ', meaning: 'indeed', sub_meaning: 'indeed', variants: nil }
-    ]
-  }
-
   def initialize(word)
     @word = word
   end
@@ -25,8 +10,8 @@ class WordService
     words.each do |word|
       next if word[:formatted_greek].blank?
       i += 1
-      if word[:formatted_greek].in? SPLIT_WORDS.keys
-        SPLIT_WORDS[word[:formatted_greek]].each_with_index do |attrs, sub_i|
+      if word[:formatted_greek].in? Constants::SPLIT_WORDS.keys
+        Constants::SPLIT_WORDS[word[:formatted_greek]].each_with_index do |attrs, sub_i|
           new(word.merge(attrs)).create_word(i += sub_i)
         end
         next

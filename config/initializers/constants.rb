@@ -61,4 +61,19 @@ module Constants
   }.freeze
 
   PUNCTUATION = %w(¶ — ; [ ] [[ ]] ( ) , . · ¬).freeze
+
+  SPLIT_WORDS = {
+    "μήγε" => [
+      { editions: 'BRW', interlinear: 'not', formatted_greek: 'μή', strong_number: 'G3361', morphology: 'PRT-N', lexical_form: 'μή', meaning: 'not', sub_meaning: 'not', variants: nil },
+      { editions: 'BIMNRSTH', interlinear: 'surely', formatted_greek: 'γε', strong_number: 'G1065', morphology: 'PRT', lexical_form: 'γέ', meaning: 'indeed', sub_meaning: 'indeed', variants: nil }
+    ],
+    "ἄραγε" => [
+      { editions: 'BIMNRSTWH', interlinear: 'then', formatted_greek: 'ἄρα', strong_number: 'G0686', morphology: 'CONJ', lexical_form: 'ἄρα', meaning: 'therefore', sub_meaning: 'therefore', variants: nil },
+      { editions: 'BIMNRSTH', interlinear: 'surely', formatted_greek: 'γε', strong_number: 'G1065', morphology: 'PRT', lexical_form: 'γέ', meaning: 'indeed', sub_meaning: 'indeed', variants: nil }
+    ],
+    "Ἄραγε" => [
+      { editions: 'BIMNRST', interlinear: 'Then', formatted_greek: 'Ἄρα', strong_number: 'G0686', morphology: 'CONJ', lexical_form: 'ἄρα', meaning: 'therefore', sub_meaning: 'therefore', variants: 'HW=ἄρα=G0686=CONJ;' },
+      { editions: 'BIMNRSTH', interlinear: 'surely', formatted_greek: 'γε', strong_number: 'G1065', morphology: 'PRT', lexical_form: 'γέ', meaning: 'indeed', sub_meaning: 'indeed', variants: nil }
+    ]
+  }.freeze
 end
