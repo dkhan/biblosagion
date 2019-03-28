@@ -88,4 +88,6 @@ module Constants
     "Jud" => [ "ΙΟΥΔΑ", "Jude", "louda", "Jude", "Jude"],
     "Rev" => [ "ΑΠΟΚΑΛΥΨΙΣ ΙΩΑΝΝΟΥ", "Revelation", "Apokalypsis Ioannou", "Revelation of John", "John"]
   }.freeze
+
+  PUNCTUATION = %w(¶ — ; [ ] [[ ]] ( ) , . · ¬).freeze
 end

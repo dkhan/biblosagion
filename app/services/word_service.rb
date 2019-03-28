@@ -82,7 +82,7 @@ class WordService
   end
 
   def strong_id
-    return nil if word[:formatted_greek].in? %w(¶ — ; [ ] [[ ]] ( ) , . · ¬)
+    return nil if word[:formatted_greek].in? Constants::PUNCTUATION
 
     strong = Strong.find_by_strong_number(word[:strong_number])
     strong = Strong.find_by_greek(word[:formatted_greek]) if strong.nil?
