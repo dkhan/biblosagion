@@ -53,6 +53,7 @@ RSpec.describe BookService do
     words << build(:random_word, reference: "42_Mrk.001.002")
     words << build(:random_word, reference: "42_Mrk.001.003")
     words << build(:random_word, reference: "42_Mrk.001.003")
+    words << build(:random_word, reference: "43_Luk.001.001")
 
     allow(Word).to receive(:order).and_return(words)
     #words.each { |word| allow(word).to receive(:save!).and_return(true) }
@@ -60,14 +61,18 @@ RSpec.describe BookService do
 
     matthews = Book.where(name: "Matthew")
     marks = Book.where(name: "Mark")
+    lukes = Book.where(name: "Luke")
     expect(matthews.count).to eq(1)
     expect(matthews.first.chapters.count).to eq(2)
     expect(marks.count).to eq(1)
     expect(marks.first.chapters.count).to eq(1)
     expect(marks.first.chapters.first.verses.count).to eq(3)
     expect(marks.first.chapters.first.verses.last.words.count).to eq(2)
-    expect(words.last.verse).to eq marks.first.chapters.first.verses.last
-    expect(words.last.chapter).to eq marks.first.chapters.last
-    expect(words.last.book).to eq marks.first
+    expect(words[7].verse).to eq marks.first.chapters.first.verses.last
+    expect(words[7].chapter).to eq marks.first.chapters.last
+    expect(words[7].book).to eq marks.first
+    expect(lukes.first.chapters.count).to eq(1)
+    expect(lukes.first.chapters.first.verses.count).to eq(1)
+    expect(words[8].verse).to eq lukes.first.chapters.first.verses.first
   end
 end

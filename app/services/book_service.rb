@@ -17,7 +17,8 @@ class BookService
     current_verse = nil
     Word.order(:testament_position).each do |word|
       next if word.normalized_greek.in? Constants::PUNCTUATION
-      puts "#{word.reference}: #{word.normalized_greek}"
+
+      #puts "#{word.reference}: #{word.normalized_greek}"
       service = new(word)
       service.book = current_book
       if current_book.try(:number) != service.book_number
@@ -25,7 +26,7 @@ class BookService
       end
 
       service.chapter = current_chapter
-      if current_chapter.try(:number) != service.chapter_number.to_i || current_book.try(:number) != service.book_number
+      if current_chapter.nil? || word.reference[0..-5] != current_chapter.reference
         current_chapter = service.create_chapter
       end
 
