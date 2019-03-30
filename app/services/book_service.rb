@@ -18,7 +18,7 @@ class BookService
     Word.order(:testament_position).each do |word|
       next if word.normalized_greek.in? Constants::PUNCTUATION
 
-      #puts "#{word.reference}: #{word.normalized_greek}"
+      puts "#{word.reference}: #{word.normalized_greek}"
       service = new(word)
       service.book = current_book
       if current_book.try(:number) != service.book_number

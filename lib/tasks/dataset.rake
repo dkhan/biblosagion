@@ -13,4 +13,9 @@ namespace :dataset do
   task books: :environment do
     BookService.populate
   end
+
+  desc "Populate paragraphs"
+  task paragraphs: :environment do
+    ParagraphService.populate(false)
+  end
 end
