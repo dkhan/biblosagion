@@ -1,6 +1,7 @@
 class Book < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
+  default_scope -> { order(:reference) }
 
   has_many :chapters, -> { order(:number) }
   has_many :words, -> { order(:testament_position) }

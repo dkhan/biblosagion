@@ -1,6 +1,7 @@
 class Paragraph < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
+  default_scope -> { order(:reference) }
 
   belongs_to :book
   belongs_to :chapter
@@ -20,5 +21,24 @@ class Paragraph < ApplicationRecord
 
   def end_verse
     Verse.find end_verse_id
+  end
+
+  def verses
+    chapter.verses.select do |v|
+      v.reference >= start_verse.reference &&
+        v.reference <= end_verse.reference
+    end
+  end
+
+  def words
+    verses.map(&:words).flatten
+  end
+
+  def text
+    words.map(&:normalized_greek).join(' ')
+  end
+
+  def vocabulary
+    words.map(&:strong).uniq
   end
 end
