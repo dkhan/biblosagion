@@ -16,7 +16,7 @@ class ParagraphService
       unless line.match /[a-z]/
         unless book_number == 40 || book.chapters.count == 1
           puts "1. end_verse.number: #{chapter.verses.last.number}"
-          paragraph.update_attribute(:end_verse_id, chapter.verses.last) unless dry_run
+          paragraph.update_attribute(:end_verse_id, chapter.verses.last.id) unless dry_run
         end
         book = Book.find_by_number(book_number += 1)
         chapter_number = 1
@@ -30,7 +30,7 @@ class ParagraphService
         unless verse_number.zero?
           puts "2. end_verse.number: #{verse_number}"
           end_verse = Verse.find_by_chapter_id_and_number(chapter, verse_number)
-          paragraph.update_attribute(:end_verse_id, end_verse) unless dry_run
+          paragraph.update_attribute(:end_verse_id, end_verse.id) unless dry_run
         end
 
         start_verse = Verse.find_by_chapter_id_and_number(chapter, verse_number + 1)
@@ -39,7 +39,7 @@ class ParagraphService
           header: line,
           book: book,
           chapter: chapter,
-          start_verse: start_verse
+          start_verse_id: start_verse.id
           ) unless dry_run
         heading_number += 1
       end
@@ -51,7 +51,7 @@ class ParagraphService
       # end of chapter
       if verse_number == chapter.verses.last.number
         puts "3. end_verse.number: #{chapter.verses.last.number}"
-        paragraph.update_attribute(:end_verse_id, chapter.verses.last) unless dry_run
+        paragraph.update_attribute(:end_verse_id, chapter.verses.last.id) unless dry_run
         if chapter_number == book.chapters.count
           chapter_number = 1
         else
