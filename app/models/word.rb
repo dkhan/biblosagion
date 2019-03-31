@@ -7,4 +7,5 @@ class Word < ApplicationRecord
   belongs_to :book
   belongs_to :chapter
   belongs_to :verse
+  has_many :features, as: :text
 end

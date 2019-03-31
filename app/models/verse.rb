@@ -6,4 +6,5 @@ class Verse < ApplicationRecord
   belongs_to :chapter
   has_many :words, -> { order(:testament_position) }
   has_many :forms, -> { unscope(:order).select(:formatted_greek).distinct }, class_name: "Word"
+  has_many :features, as: :text
 end

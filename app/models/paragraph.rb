@@ -4,6 +4,7 @@ class Paragraph < ApplicationRecord
 
   belongs_to :book
   belongs_to :chapter
+  has_many :features, as: :text
 
   before_save :set_reference
 

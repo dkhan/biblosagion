@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_28_030720) do
+ActiveRecord::Schema.define(version: 2019_03_31_032257) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -42,6 +42,30 @@ ActiveRecord::Schema.define(version: 2019_03_28_030720) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["discarded_at"], name: "index_chapters_on_discarded_at"
+  end
+
+  create_table "criteria", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "reference"
+    t.string "name"
+    t.string "description"
+    t.datetime "discarded_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discarded_at"], name: "index_criteria_on_discarded_at"
+  end
+
+  create_table "features", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "reference"
+    t.string "name"
+    t.string "description"
+    t.uuid "text_id"
+    t.string "text_type"
+    t.datetime "discarded_at"
+    t.uuid "criterion_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["criterion_id"], name: "index_features_on_criterion_id"
+    t.index ["discarded_at"], name: "index_features_on_discarded_at"
   end
 
   create_table "paragraphs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -119,4 +143,5 @@ ActiveRecord::Schema.define(version: 2019_03_28_030720) do
     t.index ["testament_position"], name: "index_words_on_testament_position"
   end
 
+  add_foreign_key "features", "criteria", column: "criterion_id"
 end
