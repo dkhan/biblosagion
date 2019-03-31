@@ -18,4 +18,9 @@ namespace :dataset do
   task paragraphs: :environment do
     ParagraphService.populate(false)
   end
+
+  desc "Populate criteria"
+  task criteria: :environment do
+    CriterionService.populate(false)
+  end
 end

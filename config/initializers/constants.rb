@@ -76,4 +76,52 @@ module Constants
       { editions: 'BIMNRSTH', interlinear: 'surely', formatted_greek: 'γε', strong_number: 'G1065', morphology: 'PRT', lexical_form: 'γέ', meaning: 'indeed', sub_meaning: 'indeed', variants: nil }
     ]
   }.freeze
+
+  GENERAL_CRITERIA = [
+    # words
+    { reference: "num_words",                          name: "The number of words" },
+    { reference: "num_letters",                        name: "The number of letters" },
+    { reference: "num_forms",                          name: "The number of forms" },
+    { reference: "num_vowels",                         name: "The number of vowels" },
+    { reference: "num_consonants",                     name: "The number of consonants" },
+    { reference: "num_vowel_words",                    name: "The number of words that begin with a vowel" },
+    { reference: "num_consonant_words",                name: "The number of words that begin with a consonant" },
+    { reference: "num_once_words",                     name: "The number of words that occur only once" },
+    { reference: "num_more_than_once_words",           name: "The number of words that occur more than once" },
+    { reference: "num_one_form_words",                 name: "The number of words that occur in only one form" },
+    { reference: "num_more_than_one_form",             name: "The number of words that occur in more than one form" },
+    { reference: "num_nouns",                          name: "The number of nouns" },
+
+    # vocabulary
+    { reference: "voc_num_words",                      name: "The number of vocabulary words" },
+    { reference: "voc_num_letters",                    name: "The number of vocabulary letters" },
+    { reference: "voc_num_vowels",                     name: "The number of vocabulary vowels" },
+    { reference: "voc_num_consonants",                 name: "The number of vocabulary consonants" },
+    { reference: "voc_num_vowel_words",                name: "The number of vocabulary words that begin with a vowel" },
+    { reference: "voc_num_consonant_words",            name: "The number of vocabulary words that begin with a consonant" },
+    { reference: "voc_num_once_words",                 name: "The number of vocabulary words that occur only once" },
+    { reference: "voc_num_more_than_once_words",       name: "The number of vocabulary words that occur more than once" },
+    { reference: "voc_num_one_form_words",             name: "The number of vocabulary words that occur in only one form" },
+    { reference: "voc_num_more_than_one_form",         name: "The number of vocabulary words that occur in more than one form" },
+    { reference: "voc_num_nouns",                      name: "The number of vocabulary nouns" },
+
+    # other
+    { reference: "sum_group_letters",                  name: "The sum of letters for word groups" },
+    { reference: "num_unique_words",                   name: "The number of words used nowhere else in the New Testament "},
+
+    # proper names
+    { reference: "num_names",                          name: "The number of names" },
+    { reference: "num_male_names",                     name: "The number of male names" },
+    { reference: "num_female_names",                   name: "The number of female names" },
+
+    # values
+    { reference: "position_vaue",                      name: "Position value" },
+    { reference: "numeric_value",                      name: "Numeric value" },
+    { reference: "value",                              name: "Value" },
+    
+    # numbers
+    { reference: "num_factors",                        name: "The number of factors" },
+    { reference: "sum_factors",                        name: "The sum of factors" },
+    { reference: "sum_figures",                        name: "The sum of figures" },
+  ]
 end
