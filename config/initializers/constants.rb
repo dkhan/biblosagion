@@ -79,49 +79,49 @@ module Constants
 
   GENERAL_CRITERIA = [
     # words
-    { reference: "num_words",                          name: "The number of words" },
-    { reference: "num_letters",                        name: "The number of letters" },
-    { reference: "num_forms",                          name: "The number of forms" },
-    { reference: "num_vowels",                         name: "The number of vowels" },
-    { reference: "num_consonants",                     name: "The number of consonants" },
-    { reference: "num_vowel_words",                    name: "The number of words that begin with a vowel" },
-    { reference: "num_consonant_words",                name: "The number of words that begin with a consonant" },
-    { reference: "num_once_words",                     name: "The number of words that occur only once" },
-    { reference: "num_more_than_once_words",           name: "The number of words that occur more than once" },
-    { reference: "num_one_form_words",                 name: "The number of words that occur in only one form" },
-    { reference: "num_more_than_one_form",             name: "The number of words that occur in more than one form" },
-    { reference: "num_nouns",                          name: "The number of nouns" },
+    { number:   1, category: "words",      reference: "num_words",                          name: "The number of words" },
+    { number:   2, category: "words",      reference: "num_letters",                        name: "The number of letters" },
+    { number:   3, category: "words",      reference: "num_forms",                          name: "The number of forms" },
+    { number:   4, category: "words",      reference: "num_vowels",                         name: "The number of vowels" },
+    { number:   5, category: "words",      reference: "num_consonants",                     name: "The number of consonants" },
+    { number:   6, category: "words",      reference: "num_vowel_words",                    name: "The number of words that begin with a vowel" },
+    { number:   7, category: "words",      reference: "num_consonant_words",                name: "The number of words that begin with a consonant" },
+    { number:   8, category: "words",      reference: "num_once_words",                     name: "The number of words that occur only once" },
+    { number:   9, category: "words",      reference: "num_more_than_once_words",           name: "The number of words that occur more than once" },
+    { number:  10, category: "words",      reference: "num_one_form_words",                 name: "The number of words that occur in only one form" },
+    { number:  11, category: "words",      reference: "num_more_than_one_form",             name: "The number of words that occur in more than one form" },
+    { number:  12, category: "words",      reference: "num_nouns",                          name: "The number of nouns" },
 
     # vocabulary
-    { reference: "voc_num_words",                      name: "The number of vocabulary words" },
-    { reference: "voc_num_letters",                    name: "The number of vocabulary letters" },
-    { reference: "voc_num_vowels",                     name: "The number of vocabulary vowels" },
-    { reference: "voc_num_consonants",                 name: "The number of vocabulary consonants" },
-    { reference: "voc_num_vowel_words",                name: "The number of vocabulary words that begin with a vowel" },
-    { reference: "voc_num_consonant_words",            name: "The number of vocabulary words that begin with a consonant" },
-    { reference: "voc_num_once_words",                 name: "The number of vocabulary words that occur only once" },
-    { reference: "voc_num_more_than_once_words",       name: "The number of vocabulary words that occur more than once" },
-    { reference: "voc_num_one_form_words",             name: "The number of vocabulary words that occur in only one form" },
-    { reference: "voc_num_more_than_one_form",         name: "The number of vocabulary words that occur in more than one form" },
-    { reference: "voc_num_nouns",                      name: "The number of vocabulary nouns" },
+    { number:  13, category: "vocabulary", reference: "voc_num_words",                      name: "The number of vocabulary words" },
+    { number:  14, category: "vocabulary", reference: "voc_num_letters",                    name: "The number of vocabulary letters" },
+    { number:  15, category: "vocabulary", reference: "voc_num_vowels",                     name: "The number of vocabulary vowels" },
+    { number:  16, category: "vocabulary", reference: "voc_num_consonants",                 name: "The number of vocabulary consonants" },
+    { number:  17, category: "vocabulary", reference: "voc_num_vowel_words",                name: "The number of vocabulary words that begin with a vowel" },
+    { number:  18, category: "vocabulary", reference: "voc_num_consonant_words",            name: "The number of vocabulary words that begin with a consonant" },
+    { number:  19, category: "vocabulary", reference: "voc_num_once_words",                 name: "The number of vocabulary words that occur only once" },
+    { number:  20, category: "vocabulary", reference: "voc_num_more_than_once_words",       name: "The number of vocabulary words that occur more than once" },
+    { number:  21, category: "vocabulary", reference: "voc_num_one_form_words",             name: "The number of vocabulary words that occur in only one form" },
+    { number:  22, category: "vocabulary", reference: "voc_num_more_than_one_form",         name: "The number of vocabulary words that occur in more than one form" },
+    { number:  23, category: "vocabulary", reference: "voc_num_nouns",                      name: "The number of vocabulary nouns" },
 
     # other
-    { reference: "sum_group_letters",                  name: "The sum of letters for word groups" },
-    { reference: "num_unique_words",                   name: "The number of words used nowhere else in the New Testament "},
+    { number:  24, category: "other",      reference: "sum_group_letters",                  name: "The sum of letters for word groups" },
+    { number:  25, category: "other",      reference: "num_unique_words",                   name: "The number of words used nowhere else in the New Testament "},
 
     # proper names
-    { reference: "num_names",                          name: "The number of names" },
-    { reference: "num_male_names",                     name: "The number of male names" },
-    { reference: "num_female_names",                   name: "The number of female names" },
+    { number:  26, category: "names",      reference: "num_names",                          name: "The number of names" },
+    { number:  27, category: "names",      reference: "num_male_names",                     name: "The number of male names" },
+    { number:  28, category: "names",      reference: "num_female_names",                   name: "The number of female names" },
 
     # values
-    { reference: "position_vaue",                      name: "Position value" },
-    { reference: "numeric_value",                      name: "Numeric value" },
-    { reference: "value",                              name: "Value" },
-    
+    { number:  29, category: "values",     reference: "position_vaue",                      name: "Position value" },
+    { number:  30, category: "values",     reference: "numeric_value",                      name: "Numeric value" },
+    { number:  31, category: "values",     reference: "value",                              name: "Value" },
+
     # numbers
-    { reference: "num_factors",                        name: "The number of factors" },
-    { reference: "sum_factors",                        name: "The sum of factors" },
-    { reference: "sum_figures",                        name: "The sum of figures" },
+    { number:  32, category: "numbers",    reference: "num_factors",                        name: "The number of factors" },
+    { number:  33, category: "numbers",    reference: "sum_factors",                        name: "The sum of factors" },
+    { number:  34, category: "numbers",    reference: "sum_figures",                        name: "The sum of figures" },
   ]
 end

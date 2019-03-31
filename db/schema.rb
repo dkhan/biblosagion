@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 2019_03_31_032257) do
   end
 
   create_table "criteria", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "number"
+    t.string "category"
     t.string "reference"
     t.string "name"
     t.string "description"
@@ -143,5 +145,5 @@ ActiveRecord::Schema.define(version: 2019_03_31_032257) do
     t.index ["testament_position"], name: "index_words_on_testament_position"
   end
 
-  add_foreign_key "features", "criteria", column: "criterion_id"
+  add_foreign_key "features", "criteria"
 end

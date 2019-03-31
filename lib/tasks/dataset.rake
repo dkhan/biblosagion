@@ -21,6 +21,6 @@ namespace :dataset do
 
   desc "Populate criteria"
   task criteria: :environment do
-    CriterionService.populate(false)
+    CriterionService.populate
   end
 end

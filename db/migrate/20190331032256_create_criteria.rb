@@ -1,6 +1,8 @@
 class CreateCriteria < ActiveRecord::Migration[5.2]
   def change
     create_table :criteria, id: :uuid do |t|
+      t.integer :number
+      t.string :category
       t.string :reference
       t.string :name
       t.string :description
