@@ -93,17 +93,17 @@ module Constants
     { category: "words",      reference: "words:num_nouns",                          name: "The number of nouns" },
 
     # vocabulary
-    { category: "vocabulary", reference: "vocabulary:num_words",                      name: "The number of vocabulary words" },
-    { category: "vocabulary", reference: "vocabulary:num_letters",                    name: "The number of vocabulary letters" },
-    { category: "vocabulary", reference: "vocabulary:num_vowels",                     name: "The number of vocabulary vowels" },
-    { category: "vocabulary", reference: "vocabulary:num_consonants",                 name: "The number of vocabulary consonants" },
-    { category: "vocabulary", reference: "vocabulary:num_vowel_words",                name: "The number of vocabulary words that begin with a vowel" },
-    { category: "vocabulary", reference: "vocabulary:num_consonant_words",            name: "The number of vocabulary words that begin with a consonant" },
-    { category: "vocabulary", reference: "vocabulary:num_once_words",                 name: "The number of vocabulary words that occur only once" },
-    { category: "vocabulary", reference: "vocabulary:num_more_than_once_words",       name: "The number of vocabulary words that occur more than once" },
-    { category: "vocabulary", reference: "vocabulary:num_one_form_words",             name: "The number of vocabulary words that occur in only one form" },
-    { category: "vocabulary", reference: "vocabulary:num_more_than_one_form",         name: "The number of vocabulary words that occur in more than one form" },
-    { category: "vocabulary", reference: "vocabulary:num_nouns",                      name: "The number of vocabulary nouns" },
+    { category: "vocabulary", reference: "vocabulary:num_words",                     name: "The number of vocabulary words" },
+    { category: "vocabulary", reference: "vocabulary:num_letters",                   name: "The number of vocabulary letters" },
+    { category: "vocabulary", reference: "vocabulary:num_vowels",                    name: "The number of vocabulary vowels" },
+    { category: "vocabulary", reference: "vocabulary:num_consonants",                name: "The number of vocabulary consonants" },
+    { category: "vocabulary", reference: "vocabulary:num_vowel_words",               name: "The number of vocabulary words that begin with a vowel" },
+    { category: "vocabulary", reference: "vocabulary:num_consonant_words",           name: "The number of vocabulary words that begin with a consonant" },
+    { category: "vocabulary", reference: "vocabulary:num_once_words",                name: "The number of vocabulary words that occur only once" },
+    { category: "vocabulary", reference: "vocabulary:num_more_than_once_words",      name: "The number of vocabulary words that occur more than once" },
+    { category: "vocabulary", reference: "vocabulary:num_one_form_words",            name: "The number of vocabulary words that occur in only one form" },
+    { category: "vocabulary", reference: "vocabulary:num_more_than_one_form",        name: "The number of vocabulary words that occur in more than one form" },
+    { category: "vocabulary", reference: "vocabulary:num_nouns",                     name: "The number of vocabulary nouns" },
 
     # other
     { category: "other",      reference: "other:sum_group_letters",                  name: "The sum of letters for word groups" },
@@ -115,13 +115,13 @@ module Constants
     { category: "names",      reference: "names:num_female_names",                   name: "The number of female names" },
 
     # values
-    { category: "values",     reference: "values:position_vaue",                      name: "Position value" },
-    { category: "values",     reference: "values:numeric_value",                      name: "Numeric value" },
-    { category: "values",     reference: "values:value",                              name: "Value" },
+    { category: "values",     reference: "values:position_vaue",                     name: "Position value" },
+    { category: "values",     reference: "values:numeric_value",                     name: "Numeric value" },
+    { category: "values",     reference: "values:value",                             name: "Value" },
 
     # numbers
-    { category: "numbers",    reference: "numbers:num_factors",                        name: "The number of factors" },
-    { category: "numbers",    reference: "numbers:sum_factors",                        name: "The sum of factors" },
-    { category: "numbers",    reference: "numbers:sum_figures",                        name: "The sum of figures" },
+    { category: "numbers",    reference: "numbers:num_factors",                      name: "The number of factors" },
+    { category: "numbers",    reference: "numbers:sum_factors",                      name: "The sum of factors" },
+    { category: "numbers",    reference: "numbers:sum_figures",                      name: "The sum of figures" },
   ]
 end
