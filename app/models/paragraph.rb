@@ -1,11 +1,12 @@
 class Paragraph < ApplicationRecord
+  include Readable
   include Discard::Model
+  
   default_scope -> { kept }
   default_scope -> { order(:reference) }
 
   belongs_to :book
   belongs_to :chapter
-  has_many :features, as: :text
 
   before_save :set_reference
 
@@ -32,13 +33,5 @@ class Paragraph < ApplicationRecord
 
   def words
     verses.map(&:words).flatten
-  end
-
-  def text
-    words.map(&:normalized_greek).join(' ')
-  end
-
-  def vocabulary
-    words.map(&:strong).uniq
   end
 end
