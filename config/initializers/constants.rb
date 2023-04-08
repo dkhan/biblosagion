@@ -115,7 +115,7 @@ module Constants
     { category: "names",      reference: "names_num_female_names",                   name: "The number of female names" },
 
     # values
-    { category: "values",     reference: "values_position_vaue",                     name: "Position value" },
+    { category: "values",     reference: "values_position_value",                    name: "Position value" },
     { category: "values",     reference: "values_numeric_value",                     name: "Numeric value" },
     { category: "values",     reference: "values_value",                             name: "Value" },
 
