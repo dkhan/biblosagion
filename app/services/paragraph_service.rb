@@ -33,7 +33,7 @@ class ParagraphService
           paragraph.update_attribute(:end_verse_id, end_verse.id) unless dry_run
         end
 
-        start_verse = Verse.find_by_chapter_id_and_number(chapter, verse_number + 1)
+        start_verse = Verse.find_by_chapter_id_and_number(chapter, verse_number += 1)
         puts "#{line} #{book.name} #{chapter.number}:#{start_verse.number}"
         paragraph = Paragraph.create!(
           header: line,
