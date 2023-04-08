@@ -69,6 +69,7 @@ multiple_forms = form_counts.select{|k, v|v > 1};1
 2.4.1 :283 > multiple_forms.count
  => 21                         # Feature 7: mumber of forms that accure more than once
 
+strongs.map(&:greek).map(&:chars).map(&:count).inject { |c, sum| sum += c }
 
 
 
