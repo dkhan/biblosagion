@@ -1,7 +1,7 @@
 class Criterion < ApplicationRecord
   include Discard::Model
   default_scope -> { kept }
-  default_scope -> { order(:number) }
+  default_scope -> { order(:category) }
 
 
   has_many :features
