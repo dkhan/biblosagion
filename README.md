@@ -18,7 +18,7 @@ CREATE DATABASE biblest_test
 ```
 5. Run the application in Rails console `bundle exec rails c development`.
 
-### Running the specs
+## Running the specs
 
 Use `rspec` to run the specs
 
@@ -26,7 +26,7 @@ Use `rspec` to run the specs
 
 Biblos-Agion is named after the first and the last New Testament words in original Greek: Biblos (Book) and Agion (Holy).  The project proves that the Bible is signed by God by mathematical patterns first discovered by Harvard professor Dr. Ivan Panin, 'the father of Bible numerics'.
 
-* Credits for data sources:
+## Credits for data sources
 
 "Tyndale House, Cambridge" linked to www.TyndaleHouse.com
 "STEP Bible" linked to www.STEPBible.org
