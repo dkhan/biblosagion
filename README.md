@@ -16,7 +16,14 @@ psql -U moses
 CREATE DATABASE biblos_dev
 CREATE DATABASE biblest_test
 ```
-5. Run the application in Rails console `bundle exec rails c development`.
+5. Populate data
+```
+bundle exec rake dataset:populate
+```
+6. Run the application in Rails console
+```
+bundle exec rails console development
+```
 
 ## Running the specs
 
