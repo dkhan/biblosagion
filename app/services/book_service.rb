@@ -67,6 +67,6 @@ class BookService
     word.book = book
     word.chapter = chapter
     word.verse = verse
-    word.save!
+    word.save(validate: false)
   end
 end

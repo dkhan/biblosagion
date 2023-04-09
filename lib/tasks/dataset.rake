@@ -1,4 +1,9 @@
 namespace :dataset do
+  desc "Populate all data"
+  task strongs: :environment do
+    DatasetService.populate
+  end
+
   desc "Populate strong concordance from the tsv"
   task strongs: :environment do
     StrongService.populate
@@ -22,5 +27,10 @@ namespace :dataset do
   desc "Populate criteria"
   task criteria: :environment do
     CriterionService.populate
+  end
+
+  desc "Populate translations"
+  task translations: :environment do
+    TranslationService.populate
   end
 end

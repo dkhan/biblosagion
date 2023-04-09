@@ -62,7 +62,7 @@ class WordService
                  meaning:            word[:meaning],
                  sub_meaning:        word[:sub_meaning],
                  variants:           word[:variants]
-    w.save!
+    w.save(validate: false)
     puts w.attributes.values.to_s
   end
 

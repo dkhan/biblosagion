@@ -1,8 +1,8 @@
 class ParagraphService
-  def ParagraphService.populate(dry_run = true)
+  def ParagraphService.populate
     path = File.join(Rails.root, "datasets", "leb_nt_edited.txt")
     heading_number = 0
-    book_number = 40
+    book_number = 39
     book = nil
     chapter_number = 1
     chapter = nil
@@ -14,9 +14,9 @@ class ParagraphService
 
       # name of the book - all caps
       unless line.match /[a-z]/
-        unless book_number == 40 || book.chapters.count == 1
+        unless book_number == 39 || book.chapters.count == 1
           puts "1. end_verse.number: #{chapter.verses.last.number}"
-          paragraph.update_attribute(:end_verse_id, chapter.verses.last.id) unless dry_run
+          paragraph.update_attribute(:end_verse_id, chapter.verses.last.id)
         end
         book = Book.find_by_number(book_number += 1)
         chapter_number = 1
@@ -30,17 +30,17 @@ class ParagraphService
         unless verse_number.zero?
           puts "2. end_verse.number: #{verse_number}"
           end_verse = Verse.find_by_chapter_id_and_number(chapter, verse_number)
-          paragraph.update_attribute(:end_verse_id, end_verse.id) unless dry_run
+          paragraph.update_attribute(:end_verse_id, end_verse.id)
         end
 
         start_verse = Verse.find_by_chapter_id_and_number(chapter, verse_number += 1)
         puts "#{line} #{book.name} #{chapter.number}:#{start_verse.number}"
         paragraph = Paragraph.create!(
-          header: line,
+          header: line.chomp,
           book: book,
           chapter: chapter,
           start_verse_id: start_verse.id
-          ) unless dry_run
+          )
         heading_number += 1
       end
 
@@ -51,7 +51,7 @@ class ParagraphService
       # end of chapter
       if verse_number == chapter.verses.last.number
         puts "3. end_verse.number: #{chapter.verses.last.number}"
-        paragraph.update_attribute(:end_verse_id, chapter.verses.last.id) unless dry_run
+        paragraph.update_attribute(:end_verse_id, chapter.verses.last.id)
         if chapter_number == book.chapters.count
           chapter_number = 1
         else
