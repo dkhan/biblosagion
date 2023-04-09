@@ -3,20 +3,20 @@
 ## Setup
 
 1. Start PostreSQL server with `/usr/local/opt/postgresql@14/bin/postgres -D /usr/local/var/postgres` or run `brew services start postgresql@14` to start automatically.
-1. Create a database user
+2. Create a database user
 ```
 createuser -s moses (default password `aaron`)
 ```
-1. Start postgresql console
+3. Start postgresql console
 ```
 psql -U moses
 ```
-1. create test and development databases
+4. create test and development databases
 ```
 CREATE DATABASE biblos_dev
 CREATE DATABASE biblest_test
 ```
-1. Run the application in Rails console `bundle exec rails c development`.
+5. Run the application in Rails console `bundle exec rails c development`.
 
 ### Running the specs
 
