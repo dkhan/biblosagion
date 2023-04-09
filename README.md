@@ -28,6 +28,6 @@ Biblos-Agion is named after the first and the last New Testament words in origin
 
 ## Credits for data sources
 
-"Tyndale House, Cambridge":  www.TyndaleHouse.com
-"STEP Bible" project: www.STEPBible.org
-Data source downloads: https://tyndale.github.io/STEPBible-Data/
+* "Tyndale House, Cambridge":  www.TyndaleHouse.com
+* "STEP Bible" project: www.STEPBible.org
+* Source files downloads: https://tyndale.github.io/STEPBible-Data/
