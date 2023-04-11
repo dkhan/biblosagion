@@ -6,17 +6,9 @@ class WordService
   end
 
   def self.populate
-    i = 0
-    words.each do |word|
+    words.each_with_index do |word, i|
       next if word[:formatted_greek].blank?
-      i += 1
-      if word[:formatted_greek].in? Constants::SPLIT_WORDS.keys
-        Constants::SPLIT_WORDS[word[:formatted_greek]].each_with_index do |attrs, sub_i|
-          new(word.merge(attrs)).create_word(i += sub_i)
-        end
-        next
-      end
-      new(word).create_word(i)
+      new(word).create_word(i + 1)
     end
     nil
   end
@@ -52,7 +44,7 @@ class WordService
     w = Word.new reference:          word[:reference],
                  strong_id:          strong_id,
                  strong_number:      word[:strong_number],
-                 testament_position: position,
+                 testament_position: position * 10,
                  editions:           word[:editions],
                  interlinear:        word[:interlinear],
                  formatted_greek:    word[:formatted_greek],

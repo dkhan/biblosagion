@@ -1,10 +1,22 @@
 module Readable
   def Readable.included(includee)
     includee.send :has_many, :features, as: :text
+    includee.send :has_many, :words, -> { where("editions ILIKE '%W%' OR editions = 'P'").
+                                          where("editions NOT LIKE ?", "%P-").
+                                          where("editions != ?", "IMNSW").
+                                          order(:testament_position) }
+  end
+
+  def normalized_words
+    words.map(&:normalized_greek)
   end
 
   def text
-    words.map(&:normalized_greek).join(' ')
+    normalized_words.join(' ')
+  end
+
+  def forms
+    normalized_words.uniq
   end
 
   # words
@@ -18,7 +30,7 @@ module Readable
   end
 
   def words_num_forms
-    words.uniq.count
+    forms.count
   end
 
   # vocabulary

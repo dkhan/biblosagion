@@ -16,7 +16,7 @@ class BookService
     current_chapter = nil
     current_verse = nil
     Word.order(:testament_position).each do |word|
-      next if word.normalized_greek.in? Constants::PUNCTUATION
+      # next if word.normalized_greek.in? Constants::PUNCTUATION
 
       puts "#{word.reference}: #{word.normalized_greek}"
       service = new(word)

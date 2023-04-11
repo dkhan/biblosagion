@@ -5,10 +5,22 @@ class Word < ApplicationRecord
   default_scope -> { kept }
   default_scope -> { order(:testament_position) }
 
+  belongs_to :strong, optional: true
   belongs_to :book
   belongs_to :chapter
   belongs_to :verse
-  has_one :strong
+
+  validates :reference, presence: true
+  before_save :set_strong
+
+  def set_strong
+    return if strong_number.blank?
+    return if strong_id.present?
+    
+    strong = Strong.find_by_strong_number strong_number
+    return if strong.nil?
+    self.strong_id = strong.id
+  end
 
   def words
     [self]
