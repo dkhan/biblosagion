@@ -25,6 +25,10 @@ select * from paragraphs order by reference;
 select * from criteria order by number;
 select * from features order by reference;
 
+select * from translations 
+WHERE reference BETWEEN '41_Mrk.016.009' AND '41_Mrk.016.020'
+order by reference;
+
 select * from chapters order by reference;
 select count(*) from verses; -- order by reference;
 
@@ -34,7 +38,7 @@ AND (editions ILIKE '%W%' OR editions = 'P')
 AND editions NOT ILIKE '%P-'
 AND editions != 'IMNSW'
 AND strong_id IS NOT NULL
-ORDER BY reference;
+ORDER BY testament_position;
 
 --delete from books;
 delete from criteria;
