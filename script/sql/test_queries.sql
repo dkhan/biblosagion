@@ -1,7 +1,8 @@
-select * from strongs order by strong_number;
-select * from words where formatted_greek = $"τουτέστιν" order by testament_position;
+select * from strongs where normalized_greek like 'εγω%' order by greek;
+select * from words where formatted_greek = 'τουτέστιν' order by testament_position;
 
 SELECT * FROM words order by testament_position;
+SELECT * FROM words where editions = 'BR' order by testament_position;
 
 select formatted_greek, count(*) from words
 where strong_id is null
@@ -27,7 +28,13 @@ select * from features order by reference;
 select * from chapters order by reference;
 select count(*) from verses; -- order by reference;
 
-SELECT * FROM WORDS;
+SELECT * FROM WORDS
+WHERE reference BETWEEN '41_Mrk.016.009' AND '41_Mrk.016.020'
+AND (editions ILIKE '%W%' OR editions = 'P') 
+AND editions NOT ILIKE '%P-'
+AND editions != 'IMNSW'
+AND strong_id IS NOT NULL
+ORDER BY reference;
 
 --delete from books;
 delete from criteria;

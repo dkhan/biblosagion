@@ -7,4 +7,5 @@ class Verse < ApplicationRecord
 
   belongs_to :book
   belongs_to :chapter
+  has_many :translations
 end

@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_09_011704) do
+ActiveRecord::Schema.define(version: 2023_04_17_212508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
-  create_table "books", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
+  create_table "books", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "reference"
     t.integer "number"
     t.string "name"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2023_04_09_011704) do
     t.index ["discarded_at"], name: "index_books_on_discarded_at"
   end
 
-  create_table "chapters", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
+  create_table "chapters", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "book_id"
     t.string "reference"
     t.integer "number"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2023_04_09_011704) do
     t.index ["discarded_at"], name: "index_chapters_on_discarded_at"
   end
 
-  create_table "criteria", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
+  create_table "criteria", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "category"
     t.string "reference"
     t.string "name"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2023_04_09_011704) do
     t.index ["discarded_at"], name: "index_criteria_on_discarded_at"
   end
 
-  create_table "features", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
+  create_table "features", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "reference"
     t.string "name"
     t.string "description"
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 2023_04_09_011704) do
     t.index ["discarded_at"], name: "index_features_on_discarded_at"
   end
 
-  create_table "paragraphs", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
+  create_table "paragraphs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "reference"
     t.string "header"
     t.uuid "book_id"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2023_04_09_011704) do
     t.index ["discarded_at"], name: "index_paragraphs_on_discarded_at"
   end
 
-  create_table "strongs", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
+  create_table "strongs", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "strong_number"
     t.string "meaning"
     t.string "greek"
@@ -112,7 +112,7 @@ ActiveRecord::Schema.define(version: 2023_04_09_011704) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "verses", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
+  create_table "verses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "book_id"
     t.uuid "chapter_id"
     t.string "reference"
@@ -124,7 +124,7 @@ ActiveRecord::Schema.define(version: 2023_04_09_011704) do
     t.index ["discarded_at"], name: "index_verses_on_discarded_at"
   end
 
-  create_table "words", id: :uuid, default: -> { "public.gen_random_uuid()" }, force: :cascade do |t|
+  create_table "words", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "reference"
     t.uuid "strong_id"
     t.uuid "book_id"
@@ -148,6 +148,7 @@ ActiveRecord::Schema.define(version: 2023_04_09_011704) do
     t.datetime "discarded_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "speaker"
     t.index ["book_id", "chapter_id", "verse_id"], name: "index_words_on_book_id_and_chapter_id_and_verse_id"
     t.index ["discarded_at"], name: "index_words_on_discarded_at"
     t.index ["meaning"], name: "index_words_on_meaning"

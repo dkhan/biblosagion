@@ -7,7 +7,7 @@ class StrongService
                      translit:         strong[:translit],
                      morphology:       strong[:morphology],
                      description:      strong[:description],
-                     normalized_greek: WordService.normalize(strong[:greek])
+                     normalized_greek: WordService.normalize(strong[:greek].sub(/,.*/, ''))
     end
     nil
   end

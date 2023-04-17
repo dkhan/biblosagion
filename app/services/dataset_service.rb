@@ -10,6 +10,8 @@ module DatasetService
     create_missing_words
     
     TranslationService.populate
+
+    add_speaker_to_words
   end
 
   def self.create_missing_verses
@@ -117,5 +119,11 @@ module DatasetService
     word.chapter_id = verse.chapter_id
     word.book_id = verse.book_id
     word.save(validate: false)
+  end
+
+  def self.add_speaker_to_words
+    Word.where("reference BETWEEN ? AND ?", "41_Mrk.016.015", "41_Mrk.016.018").
+         where("testament_position BETWEEN 366570 AND 367280").
+         order(:testament_position).update_all(speaker: "Jesus")
   end
 end

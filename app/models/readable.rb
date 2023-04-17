@@ -4,6 +4,7 @@ module Readable
     includee.send :has_many, :words, -> { where("editions ILIKE '%W%' OR editions = 'P'").
                                           where("editions NOT LIKE ?", "%P-").
                                           where("editions != ?", "IMNSW").
+                                          where("strong_id IS NOT NULL").
                                           order(:testament_position) }
   end
 
