@@ -1,6 +1,6 @@
 namespace :dataset do
   desc "Populate all data"
-  task strongs: :environment do
+  task populate: :environment do
     DatasetService.populate
   end
 

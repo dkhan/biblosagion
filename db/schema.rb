@@ -2,16 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_04_17_212508) do
-
+ActiveRecord::Schema[7.0].define(version: 2025_03_06_223522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -22,9 +21,9 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.string "name"
     t.string "abbreviation"
     t.integer "numeric_value"
-    t.datetime "discarded_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "discarded_at", precision: nil
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.string "title"
     t.string "greek_title"
     t.string "transcription"
@@ -38,9 +37,9 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.string "reference"
     t.integer "number"
     t.integer "numeric_value"
-    t.datetime "discarded_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "discarded_at", precision: nil
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["discarded_at"], name: "index_chapters_on_discarded_at"
   end
 
@@ -49,9 +48,9 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.string "reference"
     t.string "name"
     t.string "description"
-    t.datetime "discarded_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "discarded_at", precision: nil
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["discarded_at"], name: "index_criteria_on_discarded_at"
   end
 
@@ -61,10 +60,10 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.string "description"
     t.uuid "text_id"
     t.string "text_type"
-    t.datetime "discarded_at"
+    t.datetime "discarded_at", precision: nil
     t.uuid "criterion_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["criterion_id"], name: "index_features_on_criterion_id"
     t.index ["discarded_at"], name: "index_features_on_discarded_at"
   end
@@ -77,9 +76,9 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.uuid "start_verse_id"
     t.uuid "end_verse_id"
     t.integer "numeric_value"
-    t.datetime "discarded_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "discarded_at", precision: nil
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["discarded_at"], name: "index_paragraphs_on_discarded_at"
   end
 
@@ -90,9 +89,9 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.string "translit"
     t.string "morphology"
     t.text "description"
-    t.datetime "discarded_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "discarded_at", precision: nil
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.string "normalized_greek"
     t.index ["discarded_at"], name: "index_strongs_on_discarded_at"
     t.index ["greek"], name: "index_strongs_on_greek"
@@ -108,8 +107,8 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.uuid "verse_id"
     t.string "description"
     t.string "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
   end
 
   create_table "verses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -118,9 +117,9 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.string "reference"
     t.integer "number"
     t.integer "numeric_value"
-    t.datetime "discarded_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "discarded_at", precision: nil
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.index ["discarded_at"], name: "index_verses_on_discarded_at"
   end
 
@@ -145,9 +144,9 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.string "sub_meaning"
     t.string "variants"
     t.integer "numeric_value"
-    t.datetime "discarded_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "discarded_at", precision: nil
+    t.datetime "created_at", precision: nil, null: false
+    t.datetime "updated_at", precision: nil, null: false
     t.string "speaker"
     t.index ["book_id", "chapter_id", "verse_id"], name: "index_words_on_book_id_and_chapter_id_and_verse_id"
     t.index ["discarded_at"], name: "index_words_on_discarded_at"
@@ -157,5 +156,5 @@ ActiveRecord::Schema.define(version: 2023_04_17_212508) do
     t.index ["testament_position"], name: "index_words_on_testament_position"
   end
 
-  add_foreign_key "features", "criteria"
+  add_foreign_key "features", "criteria", column: "criterion_id"
 end

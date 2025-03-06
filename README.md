@@ -3,18 +3,18 @@
 ## Setup
 
 1. Start PostreSQL server with `/usr/local/opt/postgresql@14/bin/postgres -D /usr/local/var/postgres` or run `brew services start postgresql@14` to start automatically.
-2. Create a database user
+2. Create a database user moses (default password `aaron`)
 ```
-createuser -s moses (default password `aaron`)
+createuser -s moses
 ```
-3. Start postgresql console
+3. create test and development databases
 ```
-psql -U moses
+createdb biblos_dev -U moses
+createdb biblest_test -U moses
 ```
-4. create test and development databases
+4. Run migrations
 ```
-CREATE DATABASE biblos_dev
-CREATE DATABASE biblest_test
+bundle exec rake db:migrate
 ```
 5. Populate data
 ```
