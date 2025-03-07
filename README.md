@@ -10,7 +10,7 @@ createuser -s moses
 3. create test and development databases
 ```
 createdb biblos_dev -U moses
-createdb biblest_test -U moses
+createdb biblos_test -U moses
 ```
 4. Run migrations
 ```
