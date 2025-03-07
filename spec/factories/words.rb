@@ -11,6 +11,7 @@ FactoryBot.define do
     strong
     reference { verse.reference }
     strong_number { strong.strong_number }
+    editions { "BIMNRSTWH" }
   end
 
   factory :random_word, parent: :word do
