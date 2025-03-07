@@ -1,4 +1,3 @@
-```markdown
 # Biblos-Agion
 
 Biblos-Agion is a Ruby on Rails application that demonstrates the divine inspiration of the Bible by revealing hidden mathematical patterns in its text. These patterns, first discovered by Harvard professor Dr. Ivan Panin (often regarded as the father of Bible numerics), are presented as evidence of the Bible’s sacred origin.
@@ -99,5 +98,4 @@ Contributions are welcome! If you have improvements or bug fixes, please follow 
 
 ## License
 
-[MIT License](LICENSE)  
-```
+[MIT License](LICENSE)
