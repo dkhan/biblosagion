@@ -39,6 +39,12 @@ gem 'rb-readline'
 gem 'discard', '~> 1.0'
 gem 'smarter_csv'
 
+# Libraries that used to be bundled with Ruby's standard library and will no longer be included by default in future Ruby versions
+gem "fiddle"
+gem "bigdecimal"
+gem "rdoc"
+gem "mutex_m"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
