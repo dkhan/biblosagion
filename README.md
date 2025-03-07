@@ -15,7 +15,7 @@ Biblos-Agion is a Ruby on Rails application that demonstrates the divine inspira
 
 ## Overview
 
-Biblos-Agion analyzes biblical texts using numerical techniques to uncover patterns that support the notion of divine authorship. The project’s name is inspired by the Greek words *Biblos* (Book) and *Agion* (Holy), emphasizing the sanctity of the Bible.
+Biblos-Agion analyzes biblical texts using numerical techniques to uncover patterns that support the notion of divine authorship. The project’s name is inspired by the Greek words “Biblos” (Book) and “Agion” (Holy), which are respectively the first and last words of the original Greek manuscripts.
 
 ## Features
 
